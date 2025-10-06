@@ -61,6 +61,30 @@ header nav a:hover {
   font-size: 1.8rem;
 }
 
+/* FOOTER */
+footer {
+  text-align: center;
+  background: var(--white);
+  color: var(--primary-blue);
+  padding: 15px;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  header nav ul {
+    gap: 15px;
+  }
+
+  header nav a {
+    font-size: 1rem;
+  }
+}
+
 /* Responsividade */
 @media (max-width: 900px) {
   header {
