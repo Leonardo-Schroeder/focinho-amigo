@@ -64,8 +64,8 @@ header nav a:hover {
 /* FOOTER */
 footer {
   text-align: center;
-  background: var(--white);
-  color: var(--primary-blue);
+  background: var(--text-dark);
+  color: var(--white);
   padding: 15px;
   font-size: 0.9rem;
 }
