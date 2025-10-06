@@ -1,0 +1,52 @@
+/* Notícias (Feed Vertical) */
+.noticias {
+  padding: 40px 20px;
+  background: var(--white);
+}
+
+.noticias h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.noticia-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-height: 500px;
+  /* controla o tamanho */
+  overflow-y: auto;
+  /* scroll vertical */
+  padding-right: 10px;
+}
+
+.noticia-feed::-webkit-scrollbar {
+  width: 8px;
+}
+
+.noticia-feed::-webkit-scrollbar-thumb {
+  background: var(--secondary-blue);
+  border-radius: 5px;
+}
+
+.noticia-feed article {
+  background: var(--gray);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.noticia-feed img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.noticia-feed h3 {
+  margin: 10px 0;
+}
+
+.noticia-feed a {
+  color: var(--secondary-blue);
+  text-decoration: none;
+  font-weight: bold;
+}
