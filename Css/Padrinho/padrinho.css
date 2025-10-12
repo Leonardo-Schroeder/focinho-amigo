@@ -1,0 +1,137 @@
+/* Estilos para a página de Apadrinhamento */
+.padrinho-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Seção Herói --- */
+.padrinho-hero {
+    padding: 60px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.padrinho-hero h1 {
+    font-size: 2.8rem;
+    color: #007bff;
+    margin-bottom: 50px;
+}
+
+.padrinho-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    text-align: left;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+}
+
+.padrinho-image, .padrinho-text {
+    flex: 1;
+    min-width: 300px; /* Largura mínima para cada coluna */
+}
+
+.padrinho-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.padrinho-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.btn-ajude {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-ajude:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+/* --- Seção de Animais Necessitados --- */
+.padrinho-necessitados {
+    padding: 60px 0;
+    background-color: #2b7af9;
+}
+
+.padrinho-necessitados h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.animais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.animal-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.animal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.animal-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.animal-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 20px 20px 10px 20px;
+}
+
+.animal-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    padding: 0 20px;
+    flex-grow: 1; /* Faz o parágrafo crescer para alinhar os botões */
+}
+
+.btn-apadrinhar {
+    display: block;
+    background-color: #fcb902;
+    color: #fff;
+    text-align: center;
+    padding: 12px 20px;
+    margin: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-apadrinhar:hover {
+    background-color: #fa9701;
+}

@@ -1,0 +1,260 @@
+/* Estilos para a página de Adoção */
+
+/* Container Principal */
+.adocao-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.adocao-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.adocao-container p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Filtros */
+.filtros-adocao {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.filtro-btn {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.filtro-btn:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filtro-btn.active {
+    background-color: #e0f7ff;
+    border-color: #007bff;
+}
+
+/* ATUALIZADO: Estilo para o ícone (<i>) em vez da imagem (<img>) */
+.filtro-btn i {
+    font-size: 40px;
+    color: #555;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.filtro-btn:hover i,
+.filtro-btn.active i {
+    color: #007bff;
+}
+
+.filtro-btn span {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Carrossel de Animais */
+.animal-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.slides-container {
+    width: 100%;
+    text-align: center;
+}
+
+.animal-slide {
+    display: none; /* Esconde todos os slides por padrão */
+    animation: fadeIn 0.8s;
+}
+
+.animal-slide.active {
+    display: block; /* Mostra apenas o slide ativo */
+}
+
+.animal-nome {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.animal-slide img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.me-adota {
+    font-size: 1.8rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Setas de navegação */
+.slider-arrow {
+    background-color: rgba(221, 221, 221, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    color: #555;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.slider-arrow:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.prev {
+    left: -60px;
+}
+
+.next {
+    right: -60px;
+}
+
+/* Indicadores (pontos) */
+.slider-indicators {
+    margin-top: 20px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #007bff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* ================================================= */
+/* === ESTILOS DA SEÇÃO DE INFORMAÇÕES (NOVOS) === */
+/* ================================================= */
+
+/* Esconde as divs de informação dentro dos slides */
+.animal-info {
+    display: none;
+}
+
+/* Caixa que exibe as informações */
+#info-display-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 30px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    min-height: 50px;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Conteúdo dentro da caixa de exibição */
+.info-content {
+    padding: 20px 25px;
+    text-align: left; /* Alinha o texto à esquerda para melhor leitura */
+    animation: fadeIn 0.8s;
+}
+
+.info-content h4 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.info-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-content ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.info-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0; /* Remove margem extra do parágrafo */
+}
+
+/* Links de Informação */
+.info-links {
+    display: flex;
+    justify-content: center; /* Centraliza os links */
+    gap: 40px; /* Adiciona um espaço maior entre eles */
+    width: 100%;
+    max-width: 450px;
+    margin-top: 25px;
+    padding: 0 20px;
+}
+
+.info-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.info-link:hover {
+    color: #0056b3;
+}
+
+/* Estilo para o link de informação ativo */
+.info-links a.active {
+    font-weight: bold;
+    color: #0056b3;
+    text-decoration: underline;
+}
