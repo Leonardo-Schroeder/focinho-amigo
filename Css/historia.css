@@ -1,0 +1,124 @@
+.historia-section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.historia-section h1 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.historia-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+/* Linha do tempo */
+.linha-do-tempo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+}
+
+/*Traço da linha do tempo*/
+.linha-do-tempo::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--secondary-blue);
+}
+
+.linha-do-tempo::after {
+    content: "\f063"; /* Ícone de seta no final da linha */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 950;
+    position: absolute;
+    bottom: -18px;
+    left: 10.8px;
+    font-size: 30px;
+    color: var(--primary-blue);
+}
+
+.evento {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+    margin-top: -5px;
+}
+
+/*Bolinha da linha do tempo*/
+.evento::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: var(--primary-blue);
+    border-radius: 50%;
+    position: absolute;
+    left: 12px;
+}
+
+.evento-conteudo {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 50px;
+    flex: 1;
+}
+
+.evento h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.evento p {
+    line-height: 1.6;
+}
+
+/* Missão, visão e valores */
+.missao-visao {
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+    text-align: center;
+}
+
+.missao-visao h2 {
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.missao-visao p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .evento-conteudo {
+        margin-left: 40px;
+    }
+
+    .linha-do-tempo::before {
+        left: 10px;
+    }
+
+    .evento::before {
+        left: 3px;
+    }
+}
+
+
