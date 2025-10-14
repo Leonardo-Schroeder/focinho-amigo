@@ -1,0 +1,85 @@
+/* Container principal */
+.contato-container {
+  min-height: calc(100vh - 160px); /* garante que o footer fique no fim */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background-color: var(--white);
+  padding: 60px 20px;
+}
+
+.contato-container h1 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 50px;
+}
+
+/* Conteúdo */
+.contato-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.contato-logo img {
+  width: 280px;
+  border-radius: 10px;
+}
+
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.info-item img {
+  width: 35px;
+  height: 35px;
+}
+
+.contato-container h2 {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-top: 30px;
+}
+
+/* Footer fixo no fim se a tela for grande */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contato-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contato-info {
+    align-items: center;
+  }
+
+  .info-item {
+    font-size: 1.1rem;
+  }
+}
