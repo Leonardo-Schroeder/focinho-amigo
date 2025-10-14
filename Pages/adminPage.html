@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo | Focinho Amigo</title>
+  <link rel="stylesheet" href="../../Css/style.css">
+  <link rel="stylesheet" href="../../Css/Admin/admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2e0b45b4b1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../index.html"><img src="../../Img/logo.png" alt="Focinho Amigo"></a>
+    </div>
+    <h1 class="admin-title">Painel do Administrador</h1>
+    <div class="login-icon">
+      <a href="../login.html"><i class="fa-solid fa-user-shield"></i></a>
+    </div>
+  </header>
+
+  <main class="admin-container">
+    <aside class="admin-sidebar">
+      <ul>
+        <li class="tab-btn active" data-tab="animais">🐶 Animais</li>
+        <li class="tab-btn" data-tab="usuarios">👥 Usuários</li>
+        <li class="tab-btn" data-tab="noticias">📰 Notícias</li>
+        <li class="tab-btn" data-tab="contato">📬 Contato</li>
+      </ul>
+    </aside>
+
+    <section class="admin-content">
+      <!-- ANIMAIS -->
+      <div id="animais" class="tab-content active">
+        <div class="section-header">
+          <h2>Cadastro de Animais</h2>
+          <button class="btn-novo" data-modal="modal-animais"><i class="fa-solid fa-plus"></i> Novo Animal</button>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Espécie</th>
+                <th>Idade</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-animais"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- USUÁRIOS -->
+      <div id="usuarios" class="tab-content">
+        <div class="section-header">
+          <h2>Cadastro de Usuários</h2>
+          <button class="btn-novo" data-modal="modal-usuarios"><i class="fa-solid fa-plus"></i> Novo Usuário</button>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>CPF</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-usuarios"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- NOTÍCIAS -->
+      <div id="noticias" class="tab-content">
+        <div class="section-header">
+          <h2>Cadastro de Notícias</h2>
+          <button class="btn-novo" data-modal="modal-noticias"><i class="fa-solid fa-plus"></i> Nova Notícia</button>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Resumo</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-noticias"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CONTATO (Formulário direto na página) -->
+      <div id="contato" class="tab-content">
+        <div class="tab-contato">
+          <div class="section-header">
+            <h2>Contato</h2>
+          </div>
+
+          <form id="form-contato" class="admin-form">
+            <input type="email" placeholder="E-mail" required>
+            <input type="text" placeholder="Telefone" required>
+            <button type="submit">Alterar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAIS -->
+  <div id="modal-animais" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Novo Animal</h3>
+      <form id="form-animais" class="admin-form">
+        <input type="text" placeholder="Nome do Animal" required>
+        <input type="text" placeholder="Espécie" required>
+        <input type="number" placeholder="Idade" required>
+        <textarea placeholder="Descrição"></textarea>
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-usuarios" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Novo Usuário</h3>
+      <form id="form-usuarios" class="admin-form">
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="CPF" required>
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-noticias" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Nova Notícia</h3>
+      <form id="form-noticias" class="admin-form">
+        <input type="text" placeholder="Título da Notícia" required>
+        <textarea placeholder="Resumo da notícia"></textarea>
+        <input type="file" accept="image/*">
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Focinho Amigo - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="../Js/admin.js"></script>
+</body>
+
+</html>
