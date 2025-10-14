@@ -14,9 +14,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="../index.html">
-                <img src="../Img/logo.png" alt="Focinho Amigo">
-            </a>
+            <a href="../index.html"><img src="../Img/logo.png" alt="Focinho Amigo"></a>
         </div>
         <nav>
             <ul>
@@ -35,114 +33,66 @@
     </header>
 
     <main class="adocao-container">
-        <h1>Adoção</h1>
-        <p>Conheça alguns dos nossos amigos que estão esperando por um lar cheio de amor.</p>
+        <h1>Encontre seu Novo Amigo</h1>
+        <p>Clique em um animal para conhecer mais sobre ele. Use os filtros para refinar sua busca.</p>
 
-        <div class="filtros-adocao">
-            <button class="filtro-btn" data-filter="dog">
-                <i class="fa-solid fa-dog"></i>
-                <span>Cachorro</span>
-            </button>
-            <button class="filtro-btn" data-filter="cat">
-                <i class="fa-solid fa-cat"></i>
-                <span>Gato</span>
-            </button>
-        </div>
+        <div class="filtros-container">
+    <div class="filtro-linha">
+        <button class="filtro-btn" data-filter-group="species" data-filter="dog">
+            <i class="fa-solid fa-dog"></i>
+            <span>Cachorro</span>
+        </button>
+        <button class="filtro-btn active" data-filter-group="species" data-filter="all">
+            <i class="fa-solid fa-paw"></i>
+            <span>Todos</span>
+        </button>
+        <button class="filtro-btn" data-filter-group="species" data-filter="cat">
+            <i class="fa-solid fa-cat"></i>
+            <span>Gato</span>
+        </button>
+    </div>
+    <div class="filtro-linha">
+        <button class="filtro-btn small" data-filter-group="gender" data-filter="male">
+            <i class="fa-solid fa-mars"></i>
+            <span>Macho</span>
+        <button class="filtro-btn small active" data-filter-group="gender" data-filter="all">
+            <i class="fa-solid fa-venus-mars"></i>
+            <span>Ambos</span>
+        </button>
+        </button>
+        <button class="filtro-btn small" data-filter-group="gender" data-filter="female">
+            <i class="fa-solid fa-venus"></i>
+            <span>Fêmea</span>
+        </button>
+    </div>
+</div>
 
-        <div class="animal-slider">
-            <button class="slider-arrow prev">&#10094;</button>
+        <div class="adoption-content">
+            
+            <div class="animal-grid">
+                </div>
 
-            <div class="slides-container">
-                <div class="animal-slide" data-species="dog">
-                    <h2 class="animal-nome">Bolinha</h2>
-                    <img src="../Img/Adocao/cao1.jpg" alt="Cachorro Bolinha para adoção">
-                    <p class="me-adota">Me adota?</p>
-                    <div class="animal-info caracteristicas">
-                        <h4>Características do Bolinha</h4>
-                        <ul><li><strong>Porte:</strong> Médio</li><li><strong>Idade:</strong> 2 anos</li><li><strong>Vacinado:</strong> Sim</li><li><strong>Energia:</strong> Alta</li></ul>
-                    </div>
-                    <div class="animal-info historia">
-                        <h4>A História do Bolinha</h4>
-                        <p>Bolinha foi resgatado das ruas, mas nunca perdeu sua alegria. É dócil e adora crianças.</p>
-                    </div>
+            <div class="animal-details-panel">
+                <div id="details-placeholder">
+                    <i class="fa-solid fa-paw"></i>
+                    <h2>Clique em um animal ao lado para ver os detalhes</h2>
                 </div>
-                <div class="animal-slide" data-species="cat">
-                    <h2 class="animal-nome">Miau</h2>
-                    <img src="../Img/Adocao/gato1.jpg" alt="Gato Miau para adoção">
-                    <p class="me-adota">Me adota?</p>
-                    <div class="animal-info caracteristicas">
-                        <h4>Características da Miau</h4>
-                        <ul><li><strong>Pelagem:</strong> Curta</li><li><strong>Idade:</strong> 1 ano</li><li><strong>Castrada:</strong> Sim</li><li><strong>Personalidade:</strong> Calma e carinhosa</li></ul>
+                <div id="details-content" class="hidden">
+                    <img id="details-img" src="" alt="Foto do animal">
+                    <h2 id="details-name"></h2>
+                    <div class="details-tabs">
+                        <button class="tab-btn active" data-tab="caracteristicas">Características</button>
+                        <button class="tab-btn" data-tab="historia">História</button>
                     </div>
-                    <div class="animal-info historia">
-                        <h4>A História da Miau</h4>
-                        <p>Miau nasceu em nosso abrigo e é uma gatinha muito tranquila que adora um colo e um bom sofá.</p>
-                    </div>
-                </div>
-                <div class="animal-slide" data-species="dog">
-                    <h2 class="animal-nome">Rex</h2>
-                    <img src="../Img/Adocao/cao2.jpg" alt="Cachorro Rex para adoção">
-                    <p class="me-adota">Me adota?</p>
-                    <div class="animal-info caracteristicas">
-                        <h4>Características do Rex</h4>
-                        <ul><li><strong>Porte:</strong> Grande</li><li><strong>Idade:</strong> 4 anos</li><li><strong>Vacinado:</strong> Sim</li><li><strong>Energia:</strong> Moderada</li></ul>
-                    </div>
-                    <div class="animal-info historia">
-                        <h4>A História do Rex</h4>
-                        <p>Rex é um grandalhão de coração mole. Foi encontrado amarrado a uma árvore, mas já se recuperou e confia novamente nas pessoas.</p>
-                    </div>
-                </div>
-                <div class="animal-slide" data-species="cat">
-                    <h2 class="animal-nome">Fumaça</h2>
-                    <img src="../Img/Adocao/gato2.jpg" alt="Gato Fumaça para adoção">
-                    <p class="me-adota">Me adota?</p>
-                    <div class="animal-info caracteristicas">
-                        <h4>Características do Fumaça</h4>
-                        <ul><li><strong>Pelagem:</strong> Longa</li><li><strong>Idade:</strong> 3 anos</li><li><strong>Castrado:</strong> Sim</li><li><strong>Personalidade:</strong> Tímido no início, mas muito leal.</li></ul>
-                    </div>
-                    <div class="animal-info historia">
-                        <h4>A História do Fumaça</h4>
-                        <p>Fumaça precisa de um lar paciente, pois é um pouco assustado. Mas quando confia, se torna o melhor companheiro do mundo.</p>
-                    </div>
-                </div>
-                <div class="animal-slide" data-species="dog">
-                    <h2 class="animal-nome">Max</h2>
-                    <img src="../Img/Adocao/cao3.jpg" alt="Cachorro Max para adoção">
-                    <p class="me-adota">Me adota?</p>
-                    <div class="animal-info caracteristicas">
-                        <h4>Características do Max</h4>
-                        <ul><li><strong>Porte:</strong> Pequeno</li><li><strong>Idade:</strong> 5 anos</li><li><strong>Vacinado:</strong> Sim</li><li><strong>Energia:</strong> Baixa</li></ul>
-                    </div>
-                    <div class="animal-info historia">
-                        <h4>A História do Max</h4>
-                        <p>Max é um cachorrinho idoso e tranquilo, perfeito para apartamento. Ele só quer um cantinho confortável para passar seus anos dourados.</p>
-                    </div>
-                </div>
-                <div class="animal-slide" data-species="cat">
-                    <h2 class="animal-nome">Mia</h2>
-                    <img src="../Img/Adocao/gato3.jpg" alt="Gato Mia para adoção">
-                    <p class="me-adota">Me adota?</p>
-                    <div class="animal-info caracteristicas">
-                        <h4>Características da Mia</h4>
-                        <ul><li><strong>Pelagem:</strong> Curta</li><li><strong>Idade:</strong> 2 anos</li><li><strong>Castrada:</strong> Sim</li><li><strong>Personalidade:</strong> Brincalhona e curiosa</li></ul>
-                    </div>
-                    <div class="animal-info historia">
-                        <h4>A História da Mia</h4>
-                        <p>Mia é a exploradora do nosso gatil. Adora seguir as pessoas pela casa e caçar bolinhas de papel.</p>
-                    </div>
+                    <div id="details-caracteristicas" class="tab-content active">
+                        </div>
+                    <div id="details-historia" class="tab-content">
+                        </div>
+
+                    <a href="./contato.html" class="cta-button">Quero Adotar!</a>
+
                 </div>
             </div>
-
-            <button class="slider-arrow next">&#10095;</button>
-        </div>
-
-        <div class="slider-indicators"></div>
-        
-        <div id="info-display-container"></div>
-
-        <div class="info-links">
-            <a href="#caracteristicas" class="info-link">Características</a>
-            <a href="#historia" class="info-link">História</a>
         </div>
     </main>
 
@@ -152,6 +102,5 @@
 
     <script src="../Js/menu.js"></script>
     <script src="../Js/adocao.js"></script>
-
 </body>
 </html>
