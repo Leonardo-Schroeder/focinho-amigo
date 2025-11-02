@@ -1,7 +1,20 @@
-// Menu mobile
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("header nav");
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const closeBtn = document.querySelector('.menu-close');
 
-menuToggle.addEventListener("click", () => {
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+// abre o menu
+toggle.addEventListener('click', () => {
+  menu.classList.add('show');
+});
+
+// fecha o menu
+closeBtn.addEventListener('click', () => {
+  menu.classList.remove('show');
+});
+
+// fecha quando clicar em algum link
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('show');
+  });
 });
