@@ -23,7 +23,6 @@ body {
 /* Header */
 header {
   background: var(--white);
-  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,28 +36,22 @@ header .logo img {
   height: 70px;
 }
 
-header nav ul {
+nav ul {
   list-style: none;
   display: flex;
   gap: 30px;
   align-items: center;
 }
 
-header nav a {
+nav a {
   color: var(--primary-blue);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem;
-  transition: color 0.3s;
+  transition: color .3s;
 }
 
-header nav a:hover {
+nav a:hover {
   color: var(--secondary-blue);
-}
-
-.login-icon a {
-  color: var(--primary-blue);
-  font-size: 1.8rem;
 }
 
 /* FOOTER */
@@ -67,83 +60,107 @@ footer {
   background: var(--text-dark);
   color: var(--white);
   padding: 15px;
-  font-size: 0.9rem;
 }
 
-/* Responsividade */
-@media (max-width: 600px) {
-  .login-box {
-    padding: 30px 20px;
-  }
-
-  header nav ul {
-    gap: 15px;
-  }
-
-  header nav a {
-    font-size: 1rem;
-  }
+/* Botão menu mobile */
+.menu-toggle {
+  display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-blue);
 }
 
-/* Responsividade */
-@media (max-width: 900px) {
+.login-icon a {
+  color: var(--primary-blue);
+  font-size: 1.8rem;
+}
+
+.menu-close {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  /* Ajuste no header para centralizar o sanduíche */
   header {
-    flex-wrap: wrap;
-    /* permite quebrar linha */
-  }
-
-  nav {
-    order: 2;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    /* scroll suave */
-    background: var(--white);
-    margin-top: 10px;
-  }
-
-  nav ul {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: flex-start;
-    padding: 10px;
-    min-width: max-content;
-    /* garante que a lista ocupe largura mínima */
-  }
-
-  nav ul li {
-    flex: 0 0 auto;
-    /* impede encolher */
-  }
-
-  nav a {
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 6px;
-    white-space: nowrap;
-  }
-
-  nav::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  nav::-webkit-scrollbar-thumb {
-    background: var(--secondary-blue);
-    border-radius: 3px;
+    padding: 20px;
+    justify-content: center;
+    position: relative;
   }
 
   .menu-toggle {
-    display: none;
-    /* esconde o hamburguer */
+    display: block;
+    font-size: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-blue);
+    margin: 0;
   }
 
-  .carousel {
-    height: 300px;
+  .logo {
+    position: absolute;
+    left: 20px;
   }
 
-  .slide {
-    height: 300px;
+  .logo img {
+    height: 60px;
+  }
+
+  .login-icon {
+    position: absolute;
+    right: 20px;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    padding: 80px 20px 30px;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.35s ease;
+    z-index: 2000;
+    transform: translateY(-100%);
+  }
+
+  .menu.show {
+    transform: translateY(0);
+  }
+
+  /* Botão de fechar */
+   .menu-close {
+    display: block; /* Para mostrar apenas no mobile */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-blue);
+  }
+
+  .menu a {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .menu a:last-child {
+    border-bottom: none;
   }
 }
