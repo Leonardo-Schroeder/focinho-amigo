@@ -14,7 +14,7 @@
 
 .padrinho-hero h1 {
     font-size: 2.8rem;
-    color: #007bff;
+    color: var(--primary-blue);
     margin-bottom: 50px;
 }
 
@@ -48,7 +48,7 @@
 
 .btn-ajude {
     display: inline-block;
-    background-color: #007bff;
+    background-color: var(--secondary-blue);
     color: #fff;
     padding: 15px 40px;
     border-radius: 50px;
@@ -68,7 +68,7 @@
 /* --- Seção de Animais Necessitados --- */
 .padrinho-necessitados {
     padding: 60px 0;
-    background-color: #2b7af9;
+    background-color: var(--primary-blue);
 }
 
 .padrinho-necessitados h2 {
@@ -121,7 +121,7 @@
 
 .btn-apadrinhar {
     display: block;
-    background-color: #fcb902;
+    background-color: var(--secondary-blue);
     color: #fff;
     text-align: center;
     padding: 12px 20px;
@@ -133,5 +133,5 @@
 }
 
 .btn-apadrinhar:hover {
-    background-color: #fa9701;
+    background-color: green;
 }
