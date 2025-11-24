@@ -1,8 +1,7 @@
 /*
  * Folha de Estilos para a Página de Adoção
  * Projeto Focinho Amigo
- * Versão Final Corrigida
-*/
+ */
 
 /* ============================================================= */
 /* === ESTILOS GERAIS E DE FUNDO === */
@@ -10,33 +9,41 @@
 
 body {
     background-color: #eaf4ff;
+    /* Fundo claro */
     font-family: 'Roboto', sans-serif;
+    color: #333;
 }
+
+/* adocao.css */
+
+/* ... (demais estilos) ... */
+
+/* --- 1. Layout Principal e Títulos --- */
 
 .adocao-container {
-    max-width: 1400px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.adocao-container h1,
-.adocao-container > p {
-    text-align: center;
-    color: #1c3d5e;
+    padding: 30px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .adocao-container h1 {
+    /* <<< ESTILO DO TÍTULO PRINCIPAL - AQUI ESTÁ A CORREÇÃO >>> */
+    text-align: center;
     font-size: 2.5rem;
+    color: #1c3d5e;
     margin-bottom: 10px;
 }
 
-.adocao-container > p {
-    font-size: 1.1rem;
+.adocao-container>p {
+    text-align: center;
+    color: #333;
     margin-bottom: 40px;
+    font-size: 1.1rem;
 }
 
+/* ... (demais estilos) ... */
 /* ============================================================= */
-/* === SEÇÃO DE FILTROS (ESTILO FINAL) === */
+/* === SEÇÃO DE FILTROS === */
 /* ============================================================= */
 
 .filtros-container {
@@ -45,8 +52,6 @@ body {
     align-items: center;
     gap: 1.5rem;
     margin-bottom: 2.5rem;
-    background-color: transparent;
-    border: none;
     padding: 0;
 }
 
@@ -114,7 +119,7 @@ body {
 }
 
 /* ============================================================= */
-/* === SEÇÃO DE CONTEÚDO PRINCIPAL (GRID E DETALHES) === */
+/* === SEÇÃO DE CONTEÚDO PRINCIPAL (GRID E DETALHES - DESKTOP) === */
 /* ============================================================= */
 
 .adoption-content {
@@ -127,13 +132,13 @@ body {
     align-items: flex-start;
 }
 
-/* Grid de Animais (60%) */
+/* Grid de Animais */
 .animal-grid {
-    flex: 3; /* <<< 1. RESTAURAMOS A PROPORÇÃO DO GRID */
+    flex: 3;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* <<< 2. VOLTAMOS ÀS 3 COLUNAS FLEXÍVEIS */
-    gap: 1.5rem; /* Aumentei o gap para melhor visualização */
-    justify-items: center; /* <<< 3. CENTRALIZAMOS O ITEM NA COLUNA */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
 }
 
 .animal-card {
@@ -143,8 +148,8 @@ body {
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     background-color: #fff;
     border: 2px solid #f9ca24;
-    width: 100%; /* <<< 4. O CARD OCUPA 100% DA LARGURA DA COLUNA... */
-    max-width: 280px; /* <<< 5. ...MAS NUNCA PASSA DE 280PX! */
+    width: 100%;
+    max-width: 280px;
 }
 
 .animal-card:hover {
@@ -167,9 +172,9 @@ body {
     color: #333;
 }
 
-/* Painel de Detalhes (40%) */
+/* Painel de Detalhes (Side Panel no Desktop) */
 .animal-details-panel {
-    flex: 2; /* <<< RESTAURAMOS A PROPORÇÃO DO PAINEL */
+    flex: 2;
     border: 2px solid #f9ca24;
     border-radius: 8px;
     padding: 1.5rem;
@@ -177,68 +182,261 @@ body {
     height: fit-content;
     position: sticky;
     top: 20px;
-    min-width: 300px; /* Impede que o painel fique espremido */
+    min-width: 300px;
+    transition: all 0.3s ease;
 }
 
 
-/* ... (O restante do CSS para abas, botões e outros continua igual) ... */
-#details-placeholder { text-align: center; color: #aaa; padding: 3rem 0; }
-#details-placeholder .fa-paw { font-size: 3rem; margin-bottom: 1rem; }
-#details-content img { width: 100%; border-radius: 8px; height: 250px; object-fit: cover; margin-bottom: 1rem; }
-#details-content #details-name { margin-top: 0; font-size: 2rem; color: #333; }
-.details-tabs { display: flex; border-bottom: 1px solid #ddd; margin-bottom: 1rem; }
-.tab-btn { padding: 0.5rem 1rem; border: none; background: none; cursor: pointer; font-size: 1rem; border-bottom: 3px solid transparent; transition: border-color 0.3s, color 0.3s; color: #555; }
-.tab-btn.active { border-bottom-color: #1c3d5e; font-weight: bold; color: #1c3d5e; }
-.tab-content { display: none; text-align: left; animation: fadeIn 0.5s; }
-.tab-content.active { display: block; }
-.tab-content ul { list-style: none; padding-left: 0; }
-.tab-content ul li { font-size: 1rem; color: #555; margin-bottom: 8px; }
-.tab-content p { font-size: 1rem; color: #555; line-height: 1.6; }
-.hidden { display: none !important; }
-@keyframes fadeIn { from { opacity: 0.4; } to { opacity: 1; } }
+/* --- Detalhes do Conteúdo --- */
+
+#details-placeholder {
+    text-align: center;
+    color: #aaa;
+    padding: 3rem 0;
+}
+
+#details-placeholder .fa-paw {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #6a89cc;
+}
+
+#details-placeholder h2 {
+    font-size: 1.3rem;
+    color: #999;
+}
+
+#details-content img {
+    width: 100%;
+    border-radius: 8px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+#details-content #details-name {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.details-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+    color: #555;
+}
+
+.tab-btn.active {
+    border-bottom-color: #1c3d5e;
+    font-weight: bold;
+    color: #1c3d5e;
+}
+
+.tab-content {
+    display: none;
+    text-align: left;
+    animation: fadeIn 0.5s;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tab-content ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.tab-content strong {
+    color: #1c3d5e;
+}
+
+.tab-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: block;
+    text-decoration: none;
+    background-color: #f9ca24;
+    color: #1c3d5e;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #ffd966;
+    transform: scale(1.02);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 
 /* ============================================================= */
-/* === ESTILOS PARA PAGINAÇÃO, CTA E OUTROS === */
-/* ============================================================= */
-.pagination-container { grid-column: 1 / -1; display: flex; justify-content: center; align-items: center; padding: 1.5rem 0; gap: 0.5rem; }
-.pagination-btn { background-color: #fff; border: 2px solid #1c3d5e; color: #1c3d5e; font-weight: bold; border-radius: 8px; padding: 0.5rem 1rem; cursor: pointer; transition: all 0.3s ease; }
-.pagination-btn:hover:not(:disabled) { background-color: #1c3d5e; color: #fff; }
-.pagination-btn.active { background-color: #f9ca24; border-color: #f9ca24; color: #1c3d5e; }
-.pagination-btn:disabled { background-color: #ccc; border-color: #ccc; cursor: not-allowed; }
-.cta-button { display: block; text-decoration: none; background-color: #f9ca24; color: #1c3d5e; border: none; border-radius: 8px; padding: 15px 25px; font-size: 1.2rem; font-weight: bold; cursor: pointer; text-align: center; width: 100%; margin-bottom: 1.5rem; transition: background-color 0.3s, transform 0.2s; }
-.cta-button:hover { background-color: #ffd966; transform: scale(1.02); }
-
-
-/* ============================================================= */
-/* === RESPONSIVIDADE === */
+/* === RESPONSIVIDADE E ESTILO MODAL (MAX-WIDTH: 900PX) === */
 /* ============================================================= */
 
-@media (max-width: 1050px) { /* Ponto de quebra ajustado */
+@media (max-width: 1050px) {
     .animal-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas */
     }
 }
 
 @media (max-width: 900px) {
+
+    /* Layout principal empilhado no mobile */
     .adoption-content {
         flex-direction: column;
+        gap: 20px;
+        padding: 1rem;
     }
-    .animal-details-panel {
-        position: static;
-        margin-top: 2rem;
+
+    .animal-grid {
+        flex: auto;
         width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    /* O painel de detalhes é transformado em MODAL FIXO e CENTRALIZADO */
+    .animal-details-panel {
+        /* Remove o comportamento de sticky de desktop */
+        position: fixed;
+
+        /* Ocupa a tela inteira */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        /* Overlay escuro para focar no modal */
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 1000;
+
+        /* Centralização do conteúdo interno */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* Esconde o modal por padrão */
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+
+        /* Estilos resetados para o modal */
+        box-shadow: none;
+        padding: 0;
         min-width: unset;
     }
-}
 
-@media (max-width: 620px) {
-    .animal-grid {
-        grid-template-columns: 1fr; /* 1 coluna */
+    /* Classe ativada por JS para mostrar o modal */
+    .animal-details-panel.show-modal {
+        visibility: visible;
+        opacity: 1;
     }
+
+    /* Conteúdo interno do modal (o "quadrado" que aparece no centro) */
+    #details-content {
+        background: #f9f9f9;
+        width: 90%;
+        max-width: 500px;
+        max-height: 90%;
+        padding: 25px;
+        border-radius: 10px;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    /* Oculta o placeholder no mobile */
+    #details-placeholder {
+        display: none;
+    }
+
+    /* Botão de fechar do modal */
+    .modal-close-btn:not(.hidden) {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #f0f0f0;
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 10;
+        color: #1c3d5e;
+        line-height: 1;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: background 0.2s;
+    }
+
+    .modal-close-btn:hover {
+        background: #ddd;
+    }
+
 }
 
-@media (max-width: 480px) {
-    .filtro-btn { width: 80px; height: 80px; }
-    .filtro-btn i { font-size: 30px; }
-    .filtro-btn span { font-size: 0.8rem; }
+.modal-close-btn {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .adocao-container h1 {
+        font-size: 2rem;
+    }
+
+    .filtro-btn {
+        width: 70px;
+        height: 70px;
+    }
+
+    .filtro-btn i {
+        font-size: 25px;
+    }
+
+    .animal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

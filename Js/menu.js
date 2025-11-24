@@ -18,3 +18,19 @@ document.querySelectorAll('.menu a').forEach(link => {
     menu.classList.remove('show');
   });
 });
+
+// Função para destacar o link ativo
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.menu a');
+  const currentPath = window.location.pathname; // Pega o caminho da URL atual (ex: /sobre.html)
+
+  links.forEach(link => {
+    // Pega o caminho do href de cada link
+    const linkPath = new URL(link.href).pathname;
+
+    // Compara o caminho da página atual com o caminho do link
+    if (currentPath === linkPath || currentPath.endsWith(linkPath)) {
+      link.classList.add('active'); // Adiciona a classe 'active' ao link correspondente
+    }
+  });
+});

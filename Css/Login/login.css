@@ -1,144 +1,216 @@
 /* Variáveis */
 :root {
-  --primary-blue: #1E3A8A;
-  --secondary-blue: #3B82F6;
-  --white: #ffffff;
-  --gray: #f4f4f4;
-  --text-dark: #333333;
+    --primary-blue: #1E3A8A;
+    --secondary-blue: #3B82F6;
+    --white: #ffffff;
+    --gray: #f4f4f4;
+    --text-dark: #333333;
 }
 
 /* Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background: url('../../Img/Background/back1.jpg') no-repeat center center fixed !important;
-  background-size: cover !important;
-  color: var(--text-dark);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  position: relative;
+    font-family: 'Roboto', sans-serif;
+    /* Imagem de fundo e Glassmorphism */
+    background: url('../../Img/Background/back1.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
 }
 
-/* Overlay escurecido */
+/* Overlay escurecido para melhor contraste com o login box */
 body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 0;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
 }
 
 /* HEADER E FOOTER ficam acima do overlay */
 header, footer {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
+
+/* Estilos de Header (Simplificados) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--secondary-blue);
+}
+
+.login-icon a {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+}
+
 
 /* MAIN LOGIN */
 .login-container {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  position: relative;
-  z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 2;
 }
 
-/* Efeito vidro */
+/* Efeito vidro (Glassmorphism) */
 .login-box {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  padding: 40px 30px;
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  color: var(--white);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda sutil de "vidro" */
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: var(--white);
 }
 
 .login-box h2 {
-  color: var(--white);
-  margin-bottom: 30px;
-  font-weight: 700;
+    color: var(--white);
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); /* Sombra para melhorar a leitura */
 }
 
 .input-group {
-  text-align: left;
-  margin-bottom: 20px;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 .input-group label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 8px;
-  color: var(--white);
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--white);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .input-group input {
-  width: 100%;
-  padding: 10px 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo quase branco */
+    color: var(--text-dark);
+    transition: outline 0.3s;
 }
 
 .input-group input:focus {
-  outline: 2px solid var(--secondary-blue);
+    outline: 3px solid var(--secondary-blue);
+    background-color: var(--white);
 }
 
-/* BOTÃO */
+/* BOTÃO DE LOGIN (Estilo para a tag <a>) */
 .btn-login {
-  width: 100%;
-  background: var(--secondary-blue);
-  color: var(--white);
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
+    /* É um link, mas deve parecer um botão */
+    display: block; /* Ocupa 100% da largura */
+    text-align: center;
+    text-decoration: none;
+    
+    width: 100%;
+    background: var(--secondary-blue);
+    color: var(--white);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px; /* Adicionado um pouco de margem */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-login:hover {
-  background: var(--primary-blue);
+    background: var(--primary-blue);
+    transform: translateY(-2px);
 }
 
-/* LINK */
+/* LINKS EXTRAS */
 .extra-links {
-  margin-top: 15px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .extra-links a {
-  color: var(--white);
-  font-size: 0.9rem;
-  text-decoration: none;
+    color: var(--white);
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
 }
 
 .extra-links a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
+    color: var(--secondary-blue);
+}
+
+/* FOOTER */
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 0;
 }
 
 /* Responsividade */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* Esconde a nav bar completa no mobile */
+    }
+    header {
+        justify-content: center; /* Centraliza logo e ícone */
+        gap: 20px;
+    }
+}
+
 @media (max-width: 600px) {
-  .login-box {
-    padding: 30px 20px;
-  }
-
-  header nav ul {
-    gap: 15px;
-  }
-
-  header nav a {
-    font-size: 1rem;
-  }
+    .login-box {
+        padding: 30px 20px;
+    }
+    .extra-links {
+        flex-direction: column;
+        gap: 8px;
+    }
 }

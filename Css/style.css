@@ -81,6 +81,10 @@ footer {
   display: none;
 }
 
+.active{
+  color: var(--secondary-blue);
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
   /* Ajuste no header para centralizar o sanduíche */

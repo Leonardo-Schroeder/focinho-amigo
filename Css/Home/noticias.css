@@ -1,52 +1,179 @@
-/* Notícias (Feed Vertical) */
+/* Notícias (Seção principal) */
 .noticias {
-  padding: 40px 20px;
-  background: var(--white);
+  padding: 60px 20px;
+  /* Aumenta um pouco o padding para espaçamento */
+  background: #f8f8f8;
+  /* Um cinza bem clarinho para o fundo da seção */
+  color: #333;
+  /* Cor de texto padrão */
 }
 
 .noticias h2 {
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
+  margin-bottom: 45px;
+  /* Mais espaço abaixo do título */
+  font-size: 2.5rem;
+  /* Título maior e mais impactante */
+  color: #222;
+  /* Cor mais escura para o título */
+  position: relative;
+  padding-bottom: 10px;
 }
 
+/* Linha decorativa abaixo do título */
+.noticias h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  /* Largura da linha */
+  height: 4px;
+  /* Espessura da linha */
+  background-color: var(--secondary-blue, #007bff);
+  /* Cor da linha */
+  border-radius: 2px;
+}
+
+/* Container do Grid das Notícias */
 .noticia-feed {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  max-height: 500px;
-  /* controla o tamanho */
-  overflow-y: auto;
-  /* scroll vertical */
-  padding-right: 10px;
+  display: grid;
+  /* Ativa o CSS Grid */
+
+  /* Por padrão, 2 colunas em telas maiores */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  /* Espaço entre os "quadradinhos" das notícias */
+
+  max-width: 1200px;
+  /* Limita a largura máxima do grid */
+  margin: 0 auto;
+  /* Centraliza o grid na página */
+
+  /* Remove as propriedades de scroll vertical, pois o grid se ajusta */
+  /* overflow-y: auto; */
+  /* max-height: 500px; */
+  /* padding-right: 10px; */
 }
 
-.noticia-feed::-webkit-scrollbar {
-  width: 8px;
-}
-
-.noticia-feed::-webkit-scrollbar-thumb {
-  background: var(--secondary-blue);
-  border-radius: 5px;
-}
-
+/* Cada "quadradinho" de notícia (article) */
 .noticia-feed article {
-  background: var(--gray);
-  padding: 15px;
-  border-radius: 8px;
+  background: #ffffff;
+  /* Fundo branco para os cards */
+  border-radius: 12px;
+  /* Cantos mais arredondados */
+  overflow: hidden;
+  /* Garante que a imagem respeite o border-radius */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* Sombra suave para profundidade */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Efeito hover */
+  display: flex;
+  /* Para organizar conteúdo dentro do card */
+  flex-direction: column;
+  /* Conteúdo em coluna */
+}
+
+/* Efeito ao passar o mouse */
+.noticia-feed article:hover {
+  transform: translateY(-8px);
+  /* Levanta um pouco o card */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  /* Sombra mais intensa */
 }
 
 .noticia-feed img {
   width: 100%;
-  border-radius: 8px;
+  height: 200px;
+  /* Altura fixa para as imagens, para uniformidade */
+  object-fit: cover;
+  /* Recorta a imagem para preencher o espaço sem esticar */
+  border-radius: 12px 12px 0 0;
+  /* Apenas os cantos superiores arredondados */
+}
+
+.noticia-feed .content-wrapper {
+  padding: 20px;
+  /* Padding interno para o texto */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  /* Faz o conteúdo ocupar o espaço restante */
 }
 
 .noticia-feed h3 {
-  margin: 10px 0;
+  margin: 0 0 10px 0;
+  /* Margem ajustada */
+  font-size: 1.4rem;
+  color: #333;
+  line-height: 1.3;
+}
+
+.noticia-feed p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  /* Faz o parágrafo ocupar o máximo de espaço */
 }
 
 .noticia-feed a {
-  color: var(--secondary-blue);
+  color: var(--secondary-blue, #007bff);
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
+  align-self: flex-start;
+  /* Alinha o botão "Leia mais" à esquerda */
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.noticia-feed a:hover {
+  color: var(--primary-dark-blue, #0056b3);
+  /* Cor mais escura no hover */
+}
+
+/* Responsividade com Media Queries */
+@media (max-width: 992px) {
+  .noticia-feed {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Reduz o minmax */
+    gap: 25px;
+  }
+
+  .noticias h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .noticia-feed {
+    grid-template-columns: 1fr;
+    /* Apenas uma coluna em telas menores */
+    gap: 20px;
+  }
+
+  .noticias {
+    padding: 40px 15px;
+  }
+
+  .noticias h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .noticia-feed img {
+    height: 180px;
+    /* Altura um pouco menor para imagens em mobile */
+  }
+
+  .noticia-feed h3 {
+    font-size: 1.25rem;
+  }
+
+  .noticia-feed p {
+    font-size: 0.9rem;
+  }
 }

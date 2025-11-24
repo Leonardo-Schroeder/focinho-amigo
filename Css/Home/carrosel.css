@@ -1,37 +1,60 @@
 /* Carrossel */
 .carousel {
   position: relative;
-  height: 450px;
+  width: 100%;
+  margin: 0 auto;
+  height: 400px;
   overflow: hidden;
 }
 
 .slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+  position: relative;
+  /* Container dos slides */
+  width: 100%;
+  height: 100%;
 }
 
 .slide {
-  min-width: 100%;
-  height: 450px;
+  position: absolute;
+  /* Permite que os slides fiquem sobrepostos */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  position: relative;
-  display: none;
+  opacity: 0;
+  /* Inicia invisível */
+  transition: opacity 0.8s ease-in-out;
+  /* Transição de fade suave */
+  z-index: 1;
 }
 
 .slide.active {
-  display: block;
+  opacity: 1;
+  /* Slide ativo é visível */
+  z-index: 2;
+  /* Garante que o slide ativo esteja por cima */
 }
 
 .caption {
   position: absolute;
-  bottom: 30px;
-  left: 50px;
-  background: rgba(0, 0, 0, 0.5);
-  color: var(--white);
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1.3rem;
+  bottom: 25px;
+  /* Mais perto da borda inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Centraliza horizontalmente */
+  background: rgba(0, 0, 0, 0.65);
+  /* Fundo um pouco mais escuro e sólido */
+  color: #ffffff;
+  /* Branco puro para contraste */
+  padding: 12px 25px;
+  border-radius: 8px;
+  /* Cantos levemente arredondados */
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
 .controls {
@@ -40,11 +63,31 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  color: var(--white);
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0 20px;
   transform: translateY(-50%);
+  padding: 0 4%;
+  z-index: 10;
+}
+
+.prev,
+.next {
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  border-radius: 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  
+  cursor: pointer;
+  transition: color 0.3s ease;
+  user-select: none;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: transparent;
+  color: #007bff;
 }
 
 .indicators {
@@ -53,19 +96,54 @@
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  z-index: 15;
 }
 
 .dot {
-  height: 12px;
-  width: 12px;
+  height: 6px;
+  /* Mais fino */
+  width: 25px;
+  /* Retangular */
   background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
+  border-radius: 3px;
   display: inline-block;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, width 0.3s ease;
 }
 
 .dot.active {
-  background-color: var(--secondary-blue);
+  background-color: #007bff;
+  /* Use um azul profissional ou a cor de sua marca */
+  width: 35px;
+  /* Destaca o ativo alongando-o */
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 300px;
+    /* Altura menor em celulares */
+  }
+
+  .prev,
+  .next {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
+
+  .controls {
+    padding: 0 5%;
+  }
+
+  .caption {
+    font-size: 1rem;
+    padding: 8px 15px;
+    bottom: 10px;
+  }
 }
