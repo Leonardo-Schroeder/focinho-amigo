@@ -35,13 +35,13 @@ body::before {
     z-index: 0;
 }
 
-/* HEADER E FOOTER ficam acima do overlay */
+/* HEADER E FOOTER ficam acima do overlay
 header, footer {
     position: relative;
     z-index: 2;
 }
 
-/* Estilos de Header (Simplificados) */
+/* Estilos de Header (Simplificados)
 header {
     display: flex;
     justify-content: space-between;
@@ -76,8 +76,7 @@ header nav a:hover {
 .login-icon a {
     color: var(--primary-blue);
     font-size: 1.5rem;
-}
-
+} */
 
 /* MAIN LOGIN */
 .login-container {
